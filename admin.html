@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +8,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/estilo.css" />
-  <link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon" />
 </head>
 
 <body>
@@ -28,7 +26,16 @@
 
 
           <h3>Serviços</h3>
-          <button class="btn btn-primary">Adicionar novo</button>
+          <button class="btn btn-primary" onclick="abrirForm()">Adicionar novo</button>
+          <section id="form-oculto">
+            <label for="servico">Digite o nome do serviço:</label>
+            <input type="text" name="servico" id="servico" required >
+            <label for="arquivo">Selecionar a imagem(Formato jpg, jpeg ou png):</label>
+            <input type="file" id="arquivo" name="arquivo" accept=".jpg, .jpeg, .png"> 
+            <label for="descricao">Digite a descrição do serviço:</label>
+            <textarea id="descricao"></textarea>
+            <input type="submit" id="envio" onclick="fechar(), receberDados()">
+          </section>
           <table class="table my-5">
             <thead>
               <tr>
@@ -76,11 +83,11 @@
     <div class="container text-center">
       <p class="m-0">
         copyright 2021
-        <img src="imagens/favicon.png" width="30" alt="" /> agência CRONOS
+        agência CRONOS
       </p>
     </div>
   </footer>
-
+  <script src="script.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
   </script>
