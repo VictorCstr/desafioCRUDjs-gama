@@ -56,27 +56,9 @@ table img {
     border: 1px solid #ccc;
 }
 
-#form-oculto{
-    display: none;
-}
 
-#servico, #descricao, #arquivo, #envio{
-   padding: 10px;
+#servico, #descricao, #arquivo{
+    padding: 10px;
    border-radius: 5px;
    border: 1px solid #0097A7;
-}
-
-#servico{
-    width: 30%;
-}
-
-#descricao{
-    width: 40%;
-    padding: 5px;
-    height: 20vh;
-}
-
-section #form-oculto label, #envio{
-    display: block;
-    margin: 10px 0px;
 }

@@ -1,18 +1,7 @@
-const form = document.getElementById('form-oculto')
- 
-function fechar(){
-    form.style.display='none'
-}
-
-function abrirForm(){
-    form.style.display='block'
-}
-
-
 function receberDados(){
-  const nome = document.getElementById('servico').value;
-  const arquivo = document.getElementById('arquivo').value;
-  const descricao = document.getElementById('descricao').value;
+  let nome = document.getElementById('servico').value;
+  let arquivo = document.getElementById('arquivo').value;
+  let descricao = document.getElementById('descricao').value;
   console.log(nome,arquivo,descricao)
     listarDados(nome, arquivo, descricao);
 }

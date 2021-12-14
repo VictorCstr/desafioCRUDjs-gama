@@ -26,16 +26,32 @@
 
 
           <h3>Serviços</h3>
-          <button class="btn btn-primary" onclick="abrirForm()">Adicionar novo</button>
-          <section id="form-oculto">
-            <label for="servico">Digite o nome do serviço:</label>
-            <input type="text" name="servico" id="servico" required >
-            <label for="arquivo">Selecionar a imagem(Formato jpg, jpeg ou png):</label>
-            <input type="file" id="arquivo" name="arquivo" accept=".jpg, .jpeg, .png"> 
-            <label for="descricao">Digite a descrição do serviço:</label>
-            <textarea id="descricao"></textarea>
-            <input type="submit" id="envio" onclick="fechar(), receberDados()">
-          </section>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Adicionar novo</button>
+              <!-- Modal abaixo -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Cadastro de Serviços</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body d-flex flex-column">
+                    <label for="servico">Digite o nome do serviço:</label>
+                      <input type="text" name="servico" id="servico" class="w-75 mb-3" required >
+                      <label for="arquivo">Selecionar a imagem(Formato jpg, jpeg ou png):</label>
+                      <input type="file" id="arquivo" name="arquivo" accept=".jpg, .jpeg, .png"> 
+                      <label for="descricao" class="mt-3">Digite a descrição do serviço:</label>
+                      <textarea id="descricao"></textarea>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger m-2" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="envio" onclick="receberDados()">Salvar alterações</button>
+                  </div>
+                </div>
+              </div>
+            </div>  <!--Final do Modal-->
           <table class="table my-5">
             <thead>
               <tr>
