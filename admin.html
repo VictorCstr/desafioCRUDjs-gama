@@ -23,13 +23,11 @@
     <div class="container">
       <div class="row">
         <div class="col">
-
-
           <h3>Serviços</h3>
           <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Adicionar novo</button>
               <!-- Modal abaixo -->
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-dialog modal-dialog-centered " role="document">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Cadastro de Serviços</h5>
@@ -38,21 +36,24 @@
                     </button>
                   </div>
                   <div class="modal-body d-flex flex-column">
+                    <form id="modalform">
                     <label for="servico">Digite o nome do serviço:</label>
-                      <input type="text" name="servico" id="servico" class="w-75 mb-3" required >
-                      <label for="arquivo">Selecionar a imagem(Formato jpg, jpeg ou png):</label>
-                      <input type="file" id="arquivo" name="arquivo" accept=".jpg, .jpeg, .png"> 
-                      <label for="descricao" class="mt-3">Digite a descrição do serviço:</label>
-                      <textarea id="descricao"></textarea>
+                      <input type="text" name="servico" id="servico" class="w-75 mb-4" required placeholder="Ex: Desenvolvimento">
+                      <label for="arquivo">Digite o URL da imagem que irá utilizar:</label>
+                      <input type="text" id="arquivo" class="w-75" name="arquivo" onchange="carregarImagem(event)" placeholder="google.com/imagens..."> 
+                      <img id="previewimage" class="img-thumbnail w-75 mt-1"/>                 
+                      <label for="descricao" class="mt-4 w-100" >Digite a descrição do serviço:</label>
+                      <textarea id="descricao" required placeholder="Este é um serviço sobre..."></textarea>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-danger m-2" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" id="envio" onclick="receberDados()">Salvar alterações</button>
+                    <button type="submit" class="btn btn-primary" id="envio" onclick="adicionarServico()" data-dismiss="modal">Salvar alterações</button>
                   </div>
+                </form>
                 </div>
               </div>
             </div>  <!--Final do Modal-->
-          <table class="table my-5">
+          <table class="table my-5" id="minha-tabela">
             <thead>
               <tr>
                 <td>Nome</td>
@@ -98,8 +99,9 @@
   <footer class="py-3 bg-light">
     <div class="container text-center">
       <p class="m-0">
-        copyright 2021
-        agência CRONOS
+        Copyright 2021
+        Agência CRONOS
+        - Equipe 24 XP#40
       </p>
     </div>
   </footer>

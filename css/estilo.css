@@ -62,3 +62,13 @@ table img {
    border-radius: 5px;
    border: 1px solid #0097A7;
 }
+
+#descricao{
+    width: 75%;
+    height: 130px;
+}
+
+
+#modalform label{
+    display: block;
+}
