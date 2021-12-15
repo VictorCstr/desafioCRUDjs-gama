@@ -38,16 +38,16 @@
                   <div class="modal-body d-flex flex-column">
                     <form id="modalform">
                     <label for="servico">Digite o nome do serviço:</label>
-                      <input type="text" name="servico" id="servico" class="w-75 mb-4" required placeholder="Ex: Desenvolvimento">
+                      <input type="text" name="servico" id="servico" class="w-50 mb-4" required placeholder="Ex: Desenvolvimento">
                       <label for="arquivo">Digite o URL da imagem que irá utilizar:</label>
                       <input type="text" id="arquivo" class="w-75" name="arquivo" onchange="carregarImagem(event)" placeholder="google.com/imagens..."> 
                       <img id="previewimage" class="img-thumbnail w-75 mt-1"/>                 
-                      <label for="descricao" class="mt-4 w-100" >Digite a descrição do serviço:</label>
-                      <textarea id="descricao" required placeholder="Este é um serviço sobre..."></textarea>
+                      <label for="descricao" class="mt-4" >Digite a descrição do serviço:</label>
+                      <textarea id="descricao" required placeholder="Este é um serviço sobre..." class="w-75"></textarea>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-danger m-2" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-primary" id="envio" onclick="adicionarServico()" data-dismiss="modal">Salvar alterações</button>
+                    <button type="reset" class="btn btn-danger m-2">Limpar</button>
+                    <button type="submit" class="btn btn-info" id="envio" onclick="adicionarServico()" data-dismiss="modal">Salvar alterações</button>
                   </div>
                 </form>
                 </div>
@@ -69,7 +69,7 @@
                 <td>Consequatur debitis ipsa numquam illum placeat quod deleniti.</td>
                 <td>
                   <button class="btn btn-secondary m-1">editar</button>
-                  <button class="btn btn-danger m-1">excluir</button>
+                  <button class="btn btn-danger m-1" onclick="removerServico(this)">excluir</button>
                 </td>
               </tr>
               <tr>
@@ -78,7 +78,7 @@
                 <td>Consequatur debitis ipsa numquam illum placeat quod deleniti.</td>
                 <td>
                   <button class="btn btn-secondary m-1">editar</button>
-                  <button class="btn btn-danger m-1">excluir</button>
+                  <button class="btn btn-danger m-1" onclick="removerServico(this)">excluir</button>
                 </td>
               </tr>
               <tr>
@@ -87,7 +87,7 @@
                 <td>Consequatur debitis ipsa numquam illum placeat quod deleniti.</td>
                 <td>
                   <button class="btn btn-secondary m-1">editar</button>
-                  <button class="btn btn-danger m-1">excluir</button>
+                  <button class="btn btn-danger m-1" onclick="removerServico(this)">excluir</button>
                 </td>
               </tr>
             </tbody>
