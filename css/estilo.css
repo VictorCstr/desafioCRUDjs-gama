@@ -66,3 +66,7 @@ table img {
 #modalform label{
     display: block;
 }
+
+#img-tamanho{
+    height: 150px;
+}

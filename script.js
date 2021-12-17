@@ -34,7 +34,7 @@ function adicionarServico() {
   let tabela = document.getElementById("minha-tabela");
   let servico = {
     nome: nome,
-    arquivo: arquivo,
+    imagem: arquivo,
     descricao: descricao,
   };
   //Adicionando os dados a lista geral
@@ -50,28 +50,35 @@ function adicionarServico() {
     let cell3 = linha.insertCell(2);
     let cell4 = linha.insertCell(3);
     //Criação do Botão de editar e remover para inserir na célula
-    let btnEditar = '<button class="btn btn-secondary m-1">editar</button>';
+    let btnEditar =
+      '<button class="btn btn-secondary m-1" data-toggle="modal" data-target="#exampleModalCenter" onclick="editarServico(this)">editar</button>';
     let btnRemover =
       '<button class="btn btn-danger m-1" onclick="removerServico(this)">excluir</button>';
 
     //Aqui estamos fazendo a inserção dos dados nas celulas novas da tabela
     cell1.innerHTML = nome;
-    cell2.innerHTML = '<img src="' + arquivo + '" class="img-thumbnail h-50"/>';
+    cell2.innerHTML =
+      '<img src="' + arquivo + '" id="img-tamanho" class="img-thumbnail"/>';
     cell3.innerHTML = descricao;
     cell4.innerHTML = btnEditar + btnRemover;
 
-    //Nesta etapa forneço um valor em branco para apagar todos os campos ao enviar
-    document.getElementById("servico").value = "";
-    document.getElementById("arquivo").value = "";
-    document.getElementById("descricao").value = "";
-    preview.src = "";
-    preview.style.display = "none";
+    resetarForm()
+    apagarPreview()
+    envio.setAttribute("data-dismiss", "modal");
+
   } else {
     //Alerta de dados faltando e impedimento do modal fechar
     window.alert("Estão faltando dados para inserir o serviço novo!");
     let envio = document.getElementById("envio");
     envio.setAttribute("data-dismiss", "");
   }
+}
+
+//Função para resetar os dados formulário
+function resetarForm(){
+  document.getElementById("servico").value = "";
+  document.getElementById("arquivo").value = "";
+  document.getElementById("descricao").value = "";
 }
 
 //Função para apagar a imagem de preview quando clicarmos em reset do formulário
@@ -98,3 +105,36 @@ function removerServico(a) {
     }
   }
 }
+
+function editarServico(b) {
+  let elemento = b.parentNode.parentNode.firstElementChild.innerHTML;
+  //Loop dentro da array para localizar a array correspondente
+  //trazendo o formulario preenchido
+  for (let i = 0; i < listaServicos.length; i++) {
+    if (elemento === listaServicos[i].nome) {
+      let nome = document.getElementById("servico");
+      nome.value = listaServicos[i].nome;
+      let arquivo = document.getElementById("arquivo");
+      arquivo.value = listaServicos[i].imagem;
+      let descricao = document.getElementById("descricao");
+      descricao.value = listaServicos[i].descricao;
+      carregarImagem();
+
+      //Alterando os dados que editar dentro da array
+      let btnAdicionar = document.getElementById("envio");
+      btnAdicionar.setAttribute("onclick", "");
+
+
+      btnAdicionar.addEventListener("onclick", function editar () {
+        listaServicos[i].nome = nome.value;
+        listaServicos[i].imagem = arquivo.value;
+        listaServicos[i].descricao = descricao.value;
+        console.log(listaServicos)
+      
+      });
+    } 
+  } 
+}
+
+resetarForm()
+apagarPreview()

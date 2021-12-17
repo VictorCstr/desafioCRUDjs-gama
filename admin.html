@@ -24,7 +24,7 @@
       <div class="row">
         <div class="col">
           <h3>Serviços</h3>
-          <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Adicionar novo</button>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="adicionar">Adicionar novo</button>
               <!-- Modal abaixo -->
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered " role="document">
@@ -46,7 +46,7 @@
                       <textarea id="descricao" required placeholder="Este é um serviço sobre..." class="w-75"></textarea>
                   </div>
                   <div class="modal-footer">
-                    <button type="reset" class="btn btn-danger m-2" onclick="apagarPreview">Limpar</button>
+                    <button type="reset" class="btn btn-danger m-2" onclick="apagarPreview()">Limpar</button>
                     <button type="submit" class="btn btn-info" id="envio" onclick="adicionarServico()" data-dismiss="modal">Salvar alterações</button>
                   </div>
                 </form>
@@ -65,28 +65,28 @@
             <tbody>
               <tr>
                 <td>Desenvolvimento Web</td>
-                <td><img src="imagens/ilustra-web.png" class="img-fluid" /></td>
+                <td><img src="imagens/ilustra-web.png" id="img-tamanho" class="img-thumbnail h-50"/></td>
                 <td>Consequatur debitis ipsa numquam illum placeat quod deleniti.</td>
                 <td>
-                  <button class="btn btn-secondary m-1">editar</button>
+                  <button class="btn btn-secondary m-1" data-toggle="modal" data-target="#exampleModalCenter" onclick="editarServico(this)">editar</button>
                   <button class="btn btn-danger m-1" onclick="removerServico(this)">excluir</button>
                 </td>
               </tr>
               <tr>
                 <td>Marketing Digital</td>
-                <td><img src="imagens/ilustra-marketing.png" class="img-fluid" /></td>
+                <td><img src="imagens/ilustra-marketing.png" id="img-tamanho" class="img-thumbnail h-50"/></td>
                 <td>Consequatur debitis ipsa numquam illum placeat quod deleniti.</td>
                 <td>
-                  <button class="btn btn-secondary m-1">editar</button>
+                  <button class="btn btn-secondary m-1" data-toggle="modal" data-target="#exampleModalCenter" onclick="editarServico(this)">editar</button>
                   <button class="btn btn-danger m-1" onclick="removerServico(this)">excluir</button>
                 </td>
               </tr>
               <tr>
                 <td>Consultoria UX</td>
-                <td><img src="imagens/ilustra-ux.png" class="img-fluid" /></td>
+                <td><img src="imagens/ilustra-ux.png" id="img-tamanho" class="img-thumbnail h-50"/></td>
                 <td>Consequatur debitis ipsa numquam illum placeat quod deleniti.</td>
                 <td>
-                  <button class="btn btn-secondary m-1">editar</button>
+                  <button class="btn btn-secondary m-1"  data-toggle="modal" data-target="#exampleModalCenter" onclick="editarServico(this)">editar</button>
                   <button class="btn btn-danger m-1" onclick="removerServico(this)">excluir</button>
                 </td>
               </tr>
