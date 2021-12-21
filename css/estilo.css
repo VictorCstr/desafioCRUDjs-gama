@@ -57,10 +57,10 @@ table img {
 }
 
 
-#servico, #descricao, #arquivo{
+#nome, #imagem, #descricao{
     padding: 10px;
-   border-radius: 5px;
-   border: 1px solid #0097A7;
+    border-radius: 5px;
+    border: 1px solid #0097A7;
 }
 
 #modalform label{
