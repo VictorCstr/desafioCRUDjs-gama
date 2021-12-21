@@ -64,7 +64,7 @@ function adicionarServico() {
 
     resetarForm();
     apagarPreview();
-    envio.setAttribute("data-dismiss", " ");
+    envio.setAttribute("data-dismiss", "modal");
   } else {
     window.alert("Estão faltando dados para inserir o serviço novo!");
     let envio = document.getElementById("envio");
@@ -85,9 +85,9 @@ function apagarPreview() {
   preview.style.display = "none";
 }
 
-function removerServico(r) {
+function removerServico(a) {
   if (confirm("Você tem certeza que você quer deletar este serviço?")) {
-    var i = r.parentNode.parentNode.rowIndex;
+    var i = a.parentNode.parentNode.rowIndex;
     let tabela = document.getElementById("minha-tabela");
     tabela.deleteRow(i);
 
