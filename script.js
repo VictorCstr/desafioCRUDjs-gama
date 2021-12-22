@@ -58,7 +58,8 @@ function adicionarServico() {
 
     //Aqui estamos fazendo a inserção dos dados nas celulas novas da tabela
     cell1.innerHTML = nome;
-    cell2.innerHTML = '<img src="' + imagem + '" class="img-thumbnail h-50"/>';
+    cell2.innerHTML =
+      '<img src="' + imagem + '"  id="img-tamanho" class="img-thumbnail"/>';
     cell3.innerHTML = descricao;
     cell4.innerHTML = btnEditar + btnRemover;
 
@@ -123,10 +124,10 @@ function editarServico(b) {
   carregarImagem();
 
   //Alterando os dados que editar dentro da array
-  let btnAdicionar = document.getElementById("envio");
-  btnAdicionar.setAttribute("onclick", "");
-  btnAdicionar.addEventListener("click", function editar() {
-    if (confirm("Salvar alterações?")) {
+  let btnSalvar = document.getElementById("envio");
+  btnSalvar.setAttribute("onclick", "");
+  btnSalvar.addEventListener("click", function editar() {
+   if(confirm('Salvar alterações?')){
       listaServicos[elementoNoArray].nome = nome.value;
       listaServicos[elementoNoArray].imagem = imagem.value;
       listaServicos[elementoNoArray].descricao = descricao.value;
@@ -139,11 +140,22 @@ function editarServico(b) {
         listaServicos[elementoNoArray].imagem +
         '" id="img-tamanho" class="img-thumbnail"/>';
       posicao[2].innerText = listaServicos[elementoNoArray].descricao;
-
-      btnAdicionar.removeEventListener("click", editar);
-      btnAdicionar.setAttribute("onclick", "adicionarServico()");
       resetarForm();
       apagarPreview();
-    }
-  });
+      }   //Encerra o IF
+      btnSalvar.removeEventListener("click", editar);
+      btnSalvar.setAttribute("onclick", "adicionarServico()")
+  }); //Encerra a função no botão de Salvar alterações
+      BotaoFechamento = document.querySelector('#botaofecha')
+      BotaoFechamento.style.display = 'none'   
+} // Encerra a função de editar
+
+function alerta(){
+  let nome = document.getElementById("nome").value;
+  if(nome.length>0){
+    setTimeout( () => {
+      alert('Você ainda está editando o serviço antigo, pois não salvou ele!')} , 500)
+      BotaoFechamento = document.querySelector('#botaofecha')
+      BotaoFechamento.style.display = 'block'
+  }
 }
