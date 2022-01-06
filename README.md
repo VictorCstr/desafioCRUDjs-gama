@@ -4,7 +4,7 @@
 
 <h1 align="center">Desafio #2 (TRIO)</h1> <br><br>
 <p align="center"> 
-  <img src="https://github.com/VictorCstr/desafioCRUDjs-gama/blob/main/smartmockups_kxgp62ci.jpg" width="100%">
+  <img src="https://github.com/VictorCstr/desafioCRUDjs-gama/blob/main/imagens/smartmockups_kxgp62ci.jpg" width="100%">
 </p>
 
 
@@ -22,7 +22,7 @@ Praticar as habilidades desenvolvidas durante este mês:
 ## Tela do formulário
 
 <p align="center"> 
-  <img src="https://github.com/VictorCstr/desafioCRUDjs-gama/blob/main/formaberto.png" width="100%">
+  <img src="https://github.com/VictorCstr/desafioCRUDjs-gama/blob/main/imagens/formaberto.png" width="100%">
 </p>
 
 
