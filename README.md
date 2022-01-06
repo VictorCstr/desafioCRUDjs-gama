@@ -45,6 +45,9 @@ $ npm install
 
 # Execute a aplicação
 $ npm start
+
+# Caso queira localizar os serviços salvos, dentro do console do navegador:
+$ console.log(listaServicos)
 ```
 
 ## :tv: Tela do formulário
