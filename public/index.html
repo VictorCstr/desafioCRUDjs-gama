@@ -11,6 +11,7 @@
 </head>
 
 <body>
+  <div id="root">
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <header>
     <div class="container">
@@ -38,9 +39,9 @@
                   <div class="modal-body d-flex flex-column">
                     <form id="modalform">
                     <label for="nome">Digite o nome do serviço:</label>
-                      <input type="text" name="nome" id="nome" class="w-50 mb-4" placeholder="Ex: Desenvolvimento" required>
+                      <input type="text" name="nome" id="nome" class="w-50 mb-4" placeholder="Desenvolvimento" required>
                       <label for="imagem">Digite o URL da imagem que irá utilizar:</label>
-                      <input type="text" name="imagem" id="imagem" class="w-75"  onchange="carregarImagem(event)" placeholder="google.com/imagens..."> 
+                      <input type="text" name="imagem" id="imagem" class="w-75"  onchange="carregarImagem(event)" placeholder="https://i.imgur.com/3afDSGg.jpeg"> 
                       <img id="previewimage" class="img-thumbnail w-75 mt-1"/>                 
                       <label for="descricao" class="mt-4" >Digite a descrição do serviço:</label>
                       <textarea id="descricao" name="descricao" placeholder="Este é um serviço sobre..." class="w-75"></textarea>
@@ -105,7 +106,7 @@
       </p>
     </div>
   </footer>
-  <div id="root"></div>
+  </div>
 </div>
   <script src="script.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -71,6 +71,22 @@ table img {
     height: 150px;
 }
 
-.oculto{
-    display: none;
+@media only screen and (max-width: 760px) {
+    #minha-tabela tr{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #009688 ;
+        margin: 20px 0px;
+    }
+
+    #minha-tabela thead{
+        display: none;
+    }
+
+    header img{
+        max-width: 100%;
+    }
 }
