@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>CRONOS AGÊNCIA - admin</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./css/estilo.css" />
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <header>
+    <div class="container">
+      <a href="#">
+        <img src="./images/CRONOS-logo-white.png" alt="Agência CRONOS" />
+      </a>
+      <h1>Painel administrativo</h1>
+    </div>
+  </header>
+  <section id="servicos" class="py-5 mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3>Serviços</h3>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="adicionar" onclick="alerta()">Adicionar novo</button>
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered " role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Cadastro de Serviços</h5>
+                    <button type="button" class="close" data-dismiss="modal" id="botaofecha" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body d-flex flex-column">
+                    <form id="modalform">
+                    <label for="nome">Digite o nome do serviço:</label>
+                      <input type="text" name="nome" id="nome" class="w-50 mb-4" placeholder="Ex: Desenvolvimento" required>
+                      <label for="imagem">Digite o URL da imagem que irá utilizar:</label>
+                      <input type="text" name="imagem" id="imagem" class="w-75"  onchange="carregarImagem(event)" placeholder="google.com/imagens..."> 
+                      <img id="previewimage" class="img-thumbnail w-75 mt-1"/>                 
+                      <label for="descricao" class="mt-4" >Digite a descrição do serviço:</label>
+                      <textarea id="descricao" name="descricao" placeholder="Este é um serviço sobre..." class="w-75"></textarea>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="reset" class="btn btn-danger m-2" onclick="apagarPreview()">Limpar</button>
+                    <button type="submit" class="btn btn-info" id="envio" onclick="adicionarServico()" data-dismiss="modal">Salvar alterações</button>
+                  </div>
+                </form>
+                </div>
+              </div>
+            </div>
+          <table class="table my-5" id="minha-tabela">
+            <thead>
+              <tr>
+                <td>Nome</td>
+                <td>Imagem</td>
+                <td>Descrição</td>
+                <td>Ações</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Desenvolvimento Web</td>
+                <td><img src="./images/ilustra-web.png" id="img-tamanho" class="img-thumbnail"/></td>
+                <td>Consequatur debitis ipsa numquam illum placeat quod deleniti.</td>
+                <td>
+                  <button class="btn btn-secondary m-1" data-toggle="modal" data-target="#exampleModalCenter" onclick="editarServico(this)">editar</button>
+                  <button class="btn btn-danger m-1" onclick="removerServico(this)">excluir</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Marketing Digital</td>
+                <td><img src="./images/ilustra-marketing.png" id="img-tamanho" class="img-thumbnail"/></td>
+                <td>Consequatur debitis ipsa numquam illum placeat quod deleniti.</td>
+                <td>
+                  <button class="btn btn-secondary m-1" data-toggle="modal" data-target="#exampleModalCenter" onclick="editarServico(this)">editar</button>
+                  <button class="btn btn-danger m-1" onclick="removerServico(this)">excluir</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Consultoria UX</td>
+                <td><img src="./images/ilustra-ux.png" id="img-tamanho" class="img-thumbnail"/></td>
+                <td>Consequatur debitis ipsa numquam illum placeat quod deleniti.</td>
+                <td>
+                  <button class="btn btn-secondary m-1"  data-toggle="modal" data-target="#exampleModalCenter" onclick="editarServico(this)">editar</button>
+                  <button class="btn btn-danger m-1" onclick="removerServico(this)">excluir</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="py-3 bg-light">
+    <div class="container text-center">
+      <p class="m-0">
+        Copyright 2021
+        Agência CRONOS
+        - Equipe 24 XP#40
+      </p>
+    </div>
+  </footer>
+  <div id="root"></div>
+</div>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
