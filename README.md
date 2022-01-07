@@ -5,6 +5,7 @@
 <p align="center">
  <a href="#computer-o-projeto">Sobre</a> •
  <a href="#dart-objetivo">Objetivo</a> • 
+  <a href="#point_down-como-ficou">Exemplo</a> • 
  <a href="#mag_right-para-rodar-o-projeto">Como rodar</a> • 
  <a href="#tv-tela-do-formulário">Tela do formulário</a> • 
  <a href="#sunglasses-colaboradores">Colaboradores</a> •
@@ -28,6 +29,9 @@ Praticar as habilidades desenvolvidas durante este mês:
    - Lógica de Programação
    - Javascript
    - React
+
+## :point_down: Como ficou
+<img src="https://github.com/VictorCstr/desafioCRUDjs-gama/blob/main/public/images/gif-exemplo.gif" width="100%"/>
 
 ## :mag_right: Para rodar o projeto:
 ```bash
